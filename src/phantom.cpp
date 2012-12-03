@@ -53,7 +53,6 @@ Phantom::Phantom(QObject *parent)
     : REPLCompletable(parent)
     , m_terminated(false)
     , m_returnValue(0)
-    , m_filesystem(0)
     , m_system(0)
 {
     QStringList args = QApplication::arguments();
@@ -284,14 +283,6 @@ QObject* Phantom::createWebServer()
     WebServer *server = new WebServer(this);
     m_servers.append(server);
     return server;
-}
-
-QObject *Phantom::createFilesystem()
-{
-    if (!m_filesystem)
-        m_filesystem = new FileSystem(this);
-
-    return m_filesystem;
 }
 
 QObject *Phantom::createSystem()

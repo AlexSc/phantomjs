@@ -102,7 +102,6 @@ public:
 public slots:
     QObject *createWebPage();
     QObject *createWebServer();
-    QObject *createFilesystem();
     QObject *createSystem();
     QObject *createCallback();
     void loadModule(const QString &moduleSource, const QString &filename);
@@ -180,7 +179,6 @@ private:
     int m_returnValue;
     QString m_script;
     QVariantMap m_defaultPageSettings;
-    FileSystem *m_filesystem;
     System *m_system;
     QList<QPointer<WebPage> > m_pages;
     QList<QPointer<WebServer> > m_servers;
